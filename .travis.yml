@@ -38,7 +38,7 @@ script:
       TAGS+=("${MAJOR_RELEASE_VERSION}")
       TAGS+=("${MAJOR_RELEASE_VERSION}-node${NODE_VERSION}")
 
-      docker build -t "${IMAGE_NAME}:latest" --build-arg NODE_VERSION="${NODE_VERSION}" --build-arg CAPTURE_WEBSITE_CLI_VERSION="${PATCH_RELEASE_VERSION}" .
+      docker build -t "${IMAGE_NAME}:latest" --build-arg NODE_VERSION="${NODE_VERSION}" .
 
       for TAG in "${TAGS[@]}" ; do
         docker tag "${IMAGE_NAME}:latest" "${IMAGE_NAME}:${TAG}"
