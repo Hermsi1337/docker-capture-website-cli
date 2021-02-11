@@ -18,7 +18,7 @@ RUN         set -x && apt-get update \
             && apt-get autoremove -y && apt-get -y autoclean \
             && rm -rf /var/lib/apt/lists/* /tmp/* /var/cache/* \
             && chmod +x /usr/local/bin/dumb-init \
-            && yarn global add capture-website-cli@$v${CAPTURE_WEBSITE_CLI_VERSION} \
+            && yarn global add capture-website-cli@v${CAPTURE_WEBSITE_CLI_VERSION} \
             && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
             && mkdir -p /home/pptruser/Downloads \
             && chown -R pptruser:pptruser /home/pptruser \
